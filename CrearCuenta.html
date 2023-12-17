@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrearCuenta</title>
+    <link rel="stylesheet" href="style/estilos.css">
+    <script src="!PLAYTIME/cliente.js"></script>
+    <script src="!PLAYTIME/server.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="logo-section">
+            <div class="logo">
+                <img src="fotos/Logo.png" alt="PLAYTIME">
+            </div>
+            <div class="logo-text">
+                <h1>PLAYTIME</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Buscar</a></li>
+                <li><a href="#">Carrito</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="login-section">
+            <a href="#" class="login-button">Iniciar Sesión</a>
+            <a href="#" class="register-button">Registro</a>
+        </div>
+    </header><HR>
+    <div class="Titulos">
+        <h1> Crear Cuenta </h1>
+    </div>
+    <div class="formularioCrearCuenta">
+        <form>
+            <div class="campo-formulario">
+                <label for="text" >Nombre</label>
+                <input type="text" id="NombreUsuario" name="text" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="text"a>Apellido</label>
+                <input type="text" id="ApellidoUsuario" name="text" required>
+            </div>
+            <div class="campo-formulario">
+                <label for="correo"a>Correo</label>
+                <input type="email" id="CorreoUsuario" name="correo" required>
+            </div>
+            <div class="campo-formulario">
+                <label for="text"a>Numero Celular</label>
+                <input type="text" id="NumeroUsuario" name="text" required>
+            </div>
+            <div class="campo-formulario">
+                <label for="rol">Selecciona tu rol:</label>
+                <select id="RolUsuario" name="rol" required>
+                    <option value="2">Comprador</option>
+                    <option value="3">Vendedor</option>
+                </select>
+            </div>
+            <div class="campo-formulario">
+                <label for="text"a>Contraseña</label>
+                <input type="text" id="ContraUsuario" name="text" required>
+            </div>
+
+
+            <div class="boton-ingresar">
+                <button type="submit">Ingresar</button>
+            </div>
+        </form>
+    </div>
+    
+</html>
