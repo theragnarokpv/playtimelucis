@@ -103,7 +103,7 @@ INSERT INTO playtime.plataforma (id_plataforma,descripcion) VALUES
 ('4','PlayStation 4'),
 ('5','Xbox One');
 
-/*Se insertan 5 productos por categoria */
+/*Se insertan 5  productos por categoria */
 INSERT INTO playtime.producto (id_producto,id_plataforma,id_usuario,descripcion,detalle,precio,existencias,ruta_imagen) VALUES
 (1,1,5,'God of War Ragnarok','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81f3ZmXx3cL._SL1500_.jpg'),
 (2,2,6,'FC2024','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://m.media-amazon.com/images/I/61ENU5AG63L._AC_SL1000_.jpg'),
