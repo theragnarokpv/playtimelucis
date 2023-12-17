@@ -28,7 +28,7 @@ CREATE TABLE playtime.usuario (
   password varchar(512) NOT NULL,
   nombre VARCHAR(20) NULL,
   apellidos VARCHAR(30) NULL,
-  correo VARCHAR(25) NULL unique,
+  correo VARCHAR(60) NULL unique,
   telefono VARCHAR(15) NULL,
   PRIMARY KEY (`id_usuario`),
   foreign key fk_usuario_rol(id_rol) references rol(id_rol))  
@@ -84,7 +84,7 @@ CREATE TABLE playtime.detalle_compra (
 insert into  playtime.rol  (id_rol, nombre) values
  (1,'Dueño'), (2,'Comprador'), (3,'Vendedor');
 
-/*Se insertan 3 registros del usuario*/
+/*Se insertan 7 registros del usuario*/
 INSERT INTO playtime.usuario (id_usuario, id_rol,password,nombre, apellidos, correo, telefono) VALUES 
 (1, 1,'$2a$10$P1.w58XvnaYQUQgZUCk4aO/RTRl8EValluCqB3S2VMLTbRt.tlre.','Juan', 'Castro Mora',    'jcastro@gmail.com',    '4556-8978'),
 (2, 2,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Rebeca',  'Contreras Mora', 'acontreras@gmail.com', '5456-8789'),
@@ -94,7 +94,7 @@ INSERT INTO playtime.usuario (id_usuario, id_rol,password,nombre, apellidos, cor
 (6,3,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Josue',  'Gomez Arriba', 'jgomez@gmail.com', '5456-8789'),
 (7, 3,'$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936');
 
-/*Se insertan 3 categorias de productos*/
+/*Se insertan 5 categorias de plataformas*/
 INSERT INTO playtime.plataforma (id_plataforma,descripcion) VALUES
 ('1','PlayStation 5'),
 ('2','Xbox Series S'),
@@ -102,7 +102,7 @@ INSERT INTO playtime.plataforma (id_plataforma,descripcion) VALUES
 ('4','PlayStation 4'),
 ('5','Xbox One');
 
-/*Se insertan 4 productos por categoria */
+/*Se insertan 5 productos por categoria */
 INSERT INTO playtime.producto (id_producto,id_plataforma,id_usuario,descripcion,detalle,precio,existencias,ruta_imagen) VALUES
 (1,1,5,'God of War Ragnarok','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81f3ZmXx3cL._SL1500_.jpg'),
 (2,2,6,'FC2024','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://m.media-amazon.com/images/I/61ENU5AG63L._AC_SL1000_.jpg'),

@@ -19,6 +19,8 @@ if ($stmt->num_rows > 0) {
     // Verificar la contraseña utilizando password_verify
     if (password_verify($contrasena, $hashedPassword)) {
         // Credenciales válidas
+
+        
         $response = array('success' => true);
     } else {
         // Credenciales inválidas
