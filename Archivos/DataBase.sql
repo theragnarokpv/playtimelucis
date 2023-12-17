@@ -46,6 +46,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 create table playtime.producto (
   id_producto INT NOT NULL AUTO_INCREMENT,
   id_plataforma INT NOT NULL,
+  id_usuario INT NOT NULL,
   descripcion VARCHAR(30) NOT NULL,  
   detalle VARCHAR(1600) NOT NULL, 
   precio double,
@@ -96,5 +97,5 @@ INSERT INTO playtime.plataforma (id_plataforma,descripcion) VALUES
 ('2','Tarjetas de Video');
 
 /*Se insertan 4 productos por categoria */
-INSERT INTO playtime.producto (id_producto,id_plataforma,descripcion,detalle,precio,existencias,ruta_imagen) VALUES
-(1,1,'Monitor AOC 19','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://c.pxhere.com/images/ec/fd/d67b367ed6467eb826842ac81d3b-1453591.jpg!d');
+INSERT INTO playtime.producto (id_producto,id_plataforma, id_usuario,descripcion,detalle,precio,existencias,ruta_imagen) VALUES
+(1,1, 1, 'Monitor AOC 19','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://c.pxhere.com/images/ec/fd/d67b367ed6467eb826842ac81d3b-1453591.jpg!d');
