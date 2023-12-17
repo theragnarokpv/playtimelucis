@@ -82,19 +82,30 @@ CREATE TABLE playtime.detalle_compra (
 
 
 insert into  playtime.rol  (id_rol, nombre) values
- (1,'Dueño'), (2,'Administrador'), (3,'Usuario');
+ (1,'Dueño'), (2,'Comprador'), (3,'Vendedor');
 
 /*Se insertan 3 registros del usuario*/
 INSERT INTO playtime.usuario (id_usuario, id_rol,username,password,nombre, apellidos, correo, telefono) VALUES 
 (1, 1,'juan','$2a$10$P1.w58XvnaYQUQgZUCk4aO/RTRl8EValluCqB3S2VMLTbRt.tlre.','Juan', 'Castro Mora',    'jcastro@gmail.com',    '4556-8978'),
 (2, 2,'rebeca','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Rebeca',  'Contreras Mora', 'acontreras@gmail.com', '5456-8789'),
-(3, 3,'pedro','$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936');
+(3,2,'luis','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Luis',  'Marin Alfaro', 'lmarin@gmail.com', '5456-8789'),
+(4,2,'Jose','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Jose',  'Garcia Guillen', 'jgarcia@gmail.com', '5456-8789'),
+(5,3,'Andres','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Andres',  'Bolaños Castillo', 'abolanos@gmail.com', '5456-8789'),
+(6,3,'Josue','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Josue',  'Gomez Arriba', 'jgomez@gmail.com', '5456-8789'),
+(7, 3,'pedro','$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936');
 
 /*Se insertan 3 categorias de productos*/
 INSERT INTO playtime.plataforma (id_plataforma,descripcion) VALUES
-('1','Procesadores'),
-('2','Tarjetas de Video');
+('1','PlayStation 5'),
+('2','Xbox Series S'),
+('3','Nintendo Switch'),
+('4','PlayStation 4'),
+('5','Xbox One');
 
 /*Se insertan 4 productos por categoria */
-INSERT INTO playtime.producto (id_producto,id_plataforma,descripcion,detalle,precio,existencias,ruta_imagen) VALUES
-(1,1,'Monitor AOC 19','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://c.pxhere.com/images/ec/fd/d67b367ed6467eb826842ac81d3b-1453591.jpg!d');
+INSERT INTO playtime.producto (id_producto,id_plataforma,id_usuario,descripcion,detalle,precio,existencias,ruta_imagen) VALUES
+(1,1,5,'God of War Ragnarok','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FSony-Ragnarok-Standard-Game-PlayStation%2Fdp%2FB0B6FGSKCQ&psig=AOvVaw3VtdDnomhkaZqCl2uOYm9-&ust=1702921414753000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNDaxuKCl4MDFQAAAAAdAAAAABAD'),
+(2,2,6,'FC2024','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2F-%2Fes%2FEA-SPORTS-FC-24-Xbox-One%2Fdp%2FB0C9VW9RBY&psig=AOvVaw1VwyyvOS_5Okh0LhreSIAX&ust=1702921484296000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJiXv4WDl4MDFQAAAAAdAAAAABAI'),
+(3,3,7,'Mario Kart Deluxe 8','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.liverpool.com.mx%2Ftienda%2Fpdp%2Fmario-kart-8-deluxe-deluxe-para-nintendo-switch-f%25C3%25ADsico%2F1057832246&psig=AOvVaw0Rzbmk3J3f03_n7yFqyYkF&ust=1702921521690000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDq5JqDl4MDFQAAAAAdAAAAABAD'),
+(4,4,5,'Minecraft','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com.mx%2Fip%2Fplaystation-4%2Fminecraft-playstation-4-playstation-4-juego-fisico%2F00071171953708&psig=AOvVaw0SO5CvBHF6E7kitgkRgjh1&ust=1702921562130000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDzsaqDl4MDFQAAAAAdAAAAABAD'),
+(5,5,6,'Starwars Jedi Fallen Order','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',23000,5,'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheshopgamer.com%2Fde%2Fjuegos-xbox-one%2F18118-star-wars-jedi-fallen-order-xboxone-juego-fisico-para-xbox-one-5030932122452.html&psig=AOvVaw32LAX521MZDFUavL-NQV_1&ust=1702921590054000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPCl3beDl4MDFQAAAAAdAAAAABAD');
