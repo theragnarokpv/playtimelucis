@@ -25,11 +25,10 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE playtime.usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,
   id_rol INT,
-  username varchar(20) NOT NULL,
   password varchar(512) NOT NULL,
   nombre VARCHAR(20) NULL,
   apellidos VARCHAR(30) NULL,
-  correo VARCHAR(25) NULL,
+  correo VARCHAR(60) NULL unique,
   telefono VARCHAR(15) NULL,
   PRIMARY KEY (`id_usuario`),
   foreign key fk_usuario_rol(id_rol) references rol(id_rol))  
@@ -86,14 +85,14 @@ insert into  playtime.rol  (id_rol, nombre) values
  (1,'Dueño'), (2,'Comprador'), (3,'Vendedor');
 
 /*Se insertan 7 registros del usuario*/
-INSERT INTO playtime.usuario (id_usuario, id_rol,username,password,nombre, apellidos, correo, telefono) VALUES 
-(1, 1,'juan','$2a$10$P1.w58XvnaYQUQgZUCk4aO/RTRl8EValluCqB3S2VMLTbRt.tlre.','Juan', 'Castro Mora',    'jcastro@gmail.com',    '4556-8978'),
-(2, 2,'rebeca','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Rebeca',  'Contreras Mora', 'acontreras@gmail.com', '5456-8789'),
-(3,2,'luis','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Luis',  'Marin Alfaro', 'lmarin@gmail.com', '5456-8789'),
-(4,2,'Jose','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Jose',  'Garcia Guillen', 'jgarcia@gmail.com', '5456-8789'),
-(5,3,'Andres','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Andres',  'Bolaños Castillo', 'abolanos@gmail.com', '5456-8789'),
-(6,3,'Josue','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Josue',  'Gomez Arriba', 'jgomez@gmail.com', '5456-8789'),
-(7, 3,'pedro','$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936');
+INSERT INTO playtime.usuario (id_usuario, id_rol,password,nombre, apellidos, correo, telefono) VALUES 
+(1, 1,'$2a$10$P1.w58XvnaYQUQgZUCk4aO/RTRl8EValluCqB3S2VMLTbRt.tlre.','Juan', 'Castro Mora',    'jcastro@gmail.com',    '4556-8978'),
+(2, 2,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Rebeca',  'Contreras Mora', 'acontreras@gmail.com', '5456-8789'),
+(3,2,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Luis',  'Marin Alfaro', 'lmarin@gmail.com', '5456-8789'),
+(4,2,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Jose',  'Garcia Guillen', 'jgarcia@gmail.com', '5456-8789'),
+(5,3,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Andres',  'Bolaños Castillo', 'abolanos@gmail.com', '5456-8789'),
+(6,3,'$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Josue',  'Gomez Arriba', 'jgomez@gmail.com', '5456-8789'),
+(7, 3,'$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936');
 
 /*Se insertan 5 categorias de plataformas*/
 INSERT INTO playtime.plataforma (id_plataforma,descripcion) VALUES

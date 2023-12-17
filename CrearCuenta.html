@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CrearCuenta</title>
-    <link rel="stylesheet" href="style/estilos.css">
-    <script src="!PLAYTIME/cliente.js"></script>
-    <script src="!PLAYTIME/server.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    
     <header>
-        <div class="logo-section">
-            <div class="logo">
-                <img src="fotos/Logo.png" alt="PLAYTIME">
-            </div>
-            <div class="logo-text">
-                <h1>PLAYTIME</h1>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Buscar</a></li>
-                <li><a href="#">Carrito</a></li>
-                <li><a href="#">Perfil</a></li>
-            </ul>
-        </nav>
-        <div class="login-section">
-            <a href="#" class="login-button">Iniciar Sesión</a>
-            <a href="#" class="register-button">Registro</a>
-        </div>
+        <div class="topnav">
+            <img id="logo" src="https://cdn.discordapp.com/attachments/1023852244233363499/1184671781844439070/image.png?ex=658cd292&is=657a5d92&hm=cabc0dda698bf3f637d3461434142824b8c37c3dd643e04c803d9d27ce7fa0c9&" alt="logo">
+            <a href="index.html">INICIO</a>
+            <a href="#">BUSCAR</a>
+            <a href="#">CARRITO</a>
+            <a href="#">PERFIL</a>
+            <a href="IniciarSesion.html"><button class="login">INICIAR SESIÓN</button></a>
+            <a href="CrearCuenta.html"><button class="register">REGISTRO</button></a>
+          </div>
     </header><HR>
     <div class="Titulos">
         <h1> Crear Cuenta </h1>
@@ -60,15 +47,20 @@
                 </select>
             </div>
             <div class="campo-formulario">
-                <label for="text"a>Contraseña</label>
-                <input type="text" id="ContraUsuario" name="text" required>
+                <label for="contra">Contraseña</label>
+                <input type="password" id="ContraUsuario" name="contra" required>
             </div>
 
 
             <div class="boton-ingresar">
-                <button type="submit">Ingresar</button>
+                <button type="button" onclick="registrar()">Ingresar</button>
             </div>
         </form>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+
 </html>
