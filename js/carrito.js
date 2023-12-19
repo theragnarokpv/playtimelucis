@@ -59,6 +59,8 @@ $(document).ready(function () {
 
                 // Ejemplo: Mostrar un mensaje de éxito al usuario
                 alert('Compra realizada con éxito. ID de compra: ' + respuesta.idCompra);
+
+                window.location.href = 'Perfil.html';
             },
             error: function () {
                 console.log('Error al procesar la compra');

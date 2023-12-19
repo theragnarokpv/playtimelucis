@@ -35,6 +35,8 @@ $(document).ready(function () {
 
                 // Ejemplo: Mostrar un mensaje de éxito al usuario
                 alert('Producto agregado con éxito. ID de producto: ' + respuesta.idProducto);
+
+                window.location.href = 'index.html';
             },
             error: function () {
                 console.log('Error al agregar el producto');

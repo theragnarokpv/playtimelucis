@@ -6,6 +6,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Obtener datos del formulario
+    $idUsuario = $_SESSION['id_usuario'];
     $direccion = $_POST['direccion'];
     $totalPagar = $_POST['total_pagar'];
     $productos = $_POST['productos'];
@@ -15,8 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmtCompra = $conn->prepare($sqlCompra);
     $stmtCompra->bind_param("ids", $idUsuario, $totalPagar, $direccion);
 
-    // Aquí deberías obtener el ID del usuario de la sesión o de alguna manera adecuada
-    $idUsuario = 1; // Ajusta esto según tu lógica de usuario
 
     if ($stmtCompra->execute()) {
         // Obtener el ID de la última compra insertada

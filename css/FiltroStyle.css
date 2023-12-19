@@ -190,21 +190,8 @@ padding-top: 5%;
   text-align: justify;
 }
 
-<<<<<<< HEAD
-  /* Estilo de la descripcion*/
-  /* Estilo del texto descripcion */
-  #datosProducto .descripcion {
-    color: #ffffff;
-    font-size: 15px;
-    text-align: justify;
-
-    position: absolute;left: 31%;
-    position: absolute;bottom:45%;
-  }
-=======
 /* Estilo de la descripcion*/
 /* Estilo de plataforma */
->>>>>>> e233c47d77f8feb69e78990f47499b4b37bc1c01
 
 .plataforma {
   color: #ffffff;
@@ -270,11 +257,6 @@ padding-top: 5%;
   background-color: #ffffff;
 }
 
-<<<<<<< HEAD
-  .kart:hover {
-    background-color: #ffffff;
-  }
-=======
 /* Estilo de la descripcion*/
 /* Hover del boton carrito */
 .kart {
@@ -294,7 +276,6 @@ padding-top: 5%;
 .kart:hover {
   background-color: #ffffff;
 }
->>>>>>> e233c47d77f8feb69e78990f47499b4b37bc1c01
 
 
 /* Estilo del carrito*/
