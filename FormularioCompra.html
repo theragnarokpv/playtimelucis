@@ -23,6 +23,39 @@
         <label for="direccion">Dirección de envío:</label>
         <input type="text" id="direccion" name="direccion" required />
         <br />
+        <label for="pago">Metodo de pago:</label>
+        <select name="pago" id="pago" onchange="mostrarCampos()">
+          <option value="0">Elija un metodo</option>
+          <option value="1">Tarjeta de Credito</option>
+          <option value="2">Paypal</option>
+          <option value="3">Efectivo</option>
+        </select>
+        <br />
+        <div id="tarjeta" style="display: none;">
+          <label for="tarjeta">Tarjeta de credito:</label>
+          <input type="number" name="tarjeta" required />
+        </div>
+        <br />
+        <div id="codigo" style="display: none;">
+          <label for="codigo">Codigo de seguridad:</label>
+          <input type="number"  name="codigo" required />
+        </div>
+        <br />
+        <div id="venc" style="display: none;">
+          <label for="venc">Dirección de envío:</label>
+          <input type="date" name="venc" required />
+        </div>
+        <br />
+        <div id="propetario" style="display: none;">
+          <label for="propetario">Propietario:</label>
+          <input type="text" name="propetario" required />
+        </div>
+        <br />
+        <div id="paypal" style="display: none;">
+          <label for="paypal">Usuario:</label>
+          <input type="text" id="paypal" name="paypal" value="@playtimepp" required readonly/>
+        </div>
+        <br />
         <br />
         <div id="datosFinales"></div>
         <br />

@@ -67,6 +67,9 @@ $(document).ready(function () {
             }
         });
     });
+
+
+
 });
 
 // Función para agregar un elemento al carrito
@@ -121,11 +124,22 @@ function eliminarItemCarrito(idProducto) {
 
 // Función para calcular y actualizar el total del carrito
 function calcularTotalCarrito() {
-    var total = 0;
+    var totalNeto = 0;
     $('.cart-item').each(function () {
         var precio = parseFloat($(this).find('.price').text().replace('$', ''));
-        total += precio;
+        totalNeto += precio;
     });
+    $('.totalNeto').text('$' + totalNeto.toFixed(2));
+
+    var envio = 2500.00
+    $('.envio').text('$' + envio.toFixed(2));
+
+
+    var iva = totalNeto * (13/100);
+    $('.impuesto').text('$' + iva.toFixed(2));
+
+
+    var total = totalNeto + iva + envio;
     $('.TotalPrice').text('$' + total.toFixed(2));
 }
 
@@ -172,7 +186,7 @@ function llenarDatosFinales(data) {
 
 // Función para calcular y actualizar el total del carrito
 function calcularTotalPedido(data) {
-    var total = 0;
+    var totalNeto = 0;
 
     // Verificar si hay productos en el carrito
     if (data && data.length > 0) {
@@ -180,10 +194,17 @@ function calcularTotalPedido(data) {
         for (let i = 0; i < data.length; i++) {
             var producto = data[i];
             if (producto && producto.precio) {
-                total += parseFloat(producto.precio);
+                totalNeto += parseFloat(producto.precio);
             }
         }
     }
+
+    var envio = 2500.00
+
+    var iva = totalNeto * (13/100);
+
+
+    var total = totalNeto + iva + envio;
 
     return total;
 }
@@ -204,3 +225,37 @@ function obtenerProductosEnCarrito() {
 
     return productosEnCarrito;
 }
+
+function mostrarCampos() {
+    // Obtener el valor seleccionado en el campo de selección
+    var metodoPago = document.getElementById("pago").value;
+
+    // Obtener referencias a los elementos que se deben mostrar/ocultar
+    var tarjeta = document.getElementById("tarjeta");
+    var codigo = document.getElementById("codigo");
+    var venc = document.getElementById("venc");
+    var propetario = document.getElementById("propetario");
+    var paypal = document.getElementById("paypal");
+
+    // Mostrar u ocultar elementos según la opción seleccionada
+    if (metodoPago === "1") { // Tarjeta de Crédito
+        tarjeta.style.display = "block";
+        codigo.style.display = "block";
+        venc.style.display = "block";
+        propetario.style.display = "block";
+        paypal.style.display = "none";
+    } else if (metodoPago === "2") { // Paypal
+        tarjeta.style.display = "none";
+        codigo.style.display = "none";
+        venc.style.display = "none";
+        propetario.style.display = "none";
+        paypal.style.display = "block";
+    } else { // Efectivo u opción no válida
+        tarjeta.style.display = "none";
+        codigo.style.display = "none";
+        venc.style.display = "none";
+        propetario.style.display = "none";
+        paypal.style.display = "none";
+    }
+}
+
