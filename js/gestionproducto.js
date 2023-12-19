@@ -1,4 +1,34 @@
 $(document).ready(function () {
+    // Realizar la petición Ajax para obtener las plataformas
+    $.ajax({
+        type: 'GET',
+        url: 'include/functions/getplataforma.php',
+        dataType: 'json',
+        success: function (data) {
+            // Manejar la respuesta exitosa del servidor
+            console.log(data);
+
+            // Rellenar el select con los datos obtenidos
+            if (data && data.length > 0) {
+                var selectPlataforma = $('#category');
+
+                data.forEach(function (plataforma) {
+                    // Crear una opción para cada plataforma
+                    var opcion = `<option value="${plataforma.id_plataforma}">${plataforma.descripcion}</option>`;
+                    selectPlataforma.append(opcion);
+                });
+            } else {
+                // Si no hay datos, puedes mostrar un mensaje o hacer algo más
+                console.log('No hay datos de plataformas');
+            }
+        },
+        error: function () {
+            // Manejar errores en la petición
+            console.log('Error al obtener las plataformas');
+        }
+    });
+
+    // Manejar el evento de submit del formulario
     $('.form').submit(function (event) {
         event.preventDefault(); // Evitar el envío del formulario por defecto
 
@@ -36,6 +66,7 @@ $(document).ready(function () {
                 // Ejemplo: Mostrar un mensaje de éxito al usuario
                 alert('Producto agregado con éxito. ID de producto: ' + respuesta.idProducto);
 
+                // Redirigir al usuario
                 window.location.href = 'index.html';
             },
             error: function () {
